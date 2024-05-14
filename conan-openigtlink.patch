@@ -1,0 +1,31 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 2a5e1e0..d7de3fb 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1,6 +1,6 @@
+-PROJECT( OpenIGTLink )
++cmake_minimum_required(VERSION 3.4)
+ 
+-cmake_minimum_required(VERSION 2.4)
++PROJECT( OpenIGTLink )
+ 
+ if(COMMAND cmake_policy)
+      cmake_policy(SET CMP0003 NEW)
+@@ -184,14 +184,14 @@ ${OpenIGTLink_BINARY_DIR}/UseOpenIGTLink.cmake COPYONLY IMMEDIATE)
+ INCLUDE (${OpenIGTLink_SOURCE_DIR}/GenerateOpenIGTLinkConfig.cmake)
+ 
+ # Save the compiler settings so another project can import them.
+-INCLUDE(${CMAKE_ROOT}/Modules/CMakeExportBuildSettings.cmake)
+-CMAKE_EXPORT_BUILD_SETTINGS(${OpenIGTLink_BINARY_DIR}/OpenIGTLinkBuildSettings.cmake)
++# INCLUDE(${CMAKE_ROOT}/Modules/CMakeExportBuildSettings.cmake)
++# CMAKE_EXPORT_BUILD_SETTINGS(${OpenIGTLink_BINARY_DIR}/OpenIGTLinkBuildSettings.cmake)
+ 
+ # Save library dependencies.
+ #EXPORT_LIBRARY_DEPENDENCIES(${OpenIGTLink_BINARY_DIR}/OpenIGTLinkLibraryDepends.cmake)
+ 
+ INSTALL(FILES
+-  ${OpenIGTLink_BINARY_DIR}/OpenIGTLinkBuildSettings.cmake
++  # ${OpenIGTLink_BINARY_DIR}/OpenIGTLinkBuildSettings.cmake
+   ${OpenIGTLink_BINARY_DIR}/UseOpenIGTLink.cmake
+   ${OpenIGTLink_BINARY_DIR}/Utilities/OpenIGTLinkConfig.cmake
+   DESTINATION ${OpenIGTLink_INSTALL_PACKAGE_DIR}
