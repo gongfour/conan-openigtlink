@@ -46,4 +46,6 @@ class OpenIGTLinkRecipe(ConanFile):
         cmake.install()
 
     def package_info(self):
+        self.cpp_info.libdirs = ["lib","lib/igtl"]
         self.cpp_info.libs = collect_libs(self)
+        print("Libraries: {}".format(self.cpp_info.libs))
